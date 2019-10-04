@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 # Node template
 
+=======
+>>>>>>> 14f73884cdd86b9d81e208d0d98b7562cfe2171a
 # Logs
 logs
 *.log
@@ -38,7 +41,11 @@ build/Release
 node_modules/
 jspm_packages/
 
+<<<<<<< HEAD
 # Typescript v1 declaration files
+=======
+# TypeScript v1 declaration files
+>>>>>>> 14f73884cdd86b9d81e208d0d98b7562cfe2171a
 typings/
 
 # Optional npm cache directory
@@ -59,6 +66,7 @@ typings/
 # dotenv environment variables file
 .env
 
+<<<<<<< HEAD
 # IDE
 .idea/*
 *.iml
@@ -74,3 +82,7 @@ yarn-error.log
 
 # Build
 dist/
+=======
+# next.js build output
+.next
+>>>>>>> 14f73884cdd86b9d81e208d0d98b7562cfe2171a
