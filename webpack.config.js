@@ -17,6 +17,14 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_module/,
+        enforce: 'pre',
+        use: {
+          loader: 'eslint-loader',
+        },
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_module/,
         use: {
           loader: 'babel-loader',
         },
