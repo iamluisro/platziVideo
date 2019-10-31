@@ -1,33 +1,33 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Header from '../components/Header';
 import Search from '../components/Search';
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
-import Footer from '../components/Footer';
 import '../assets/styles/App.scss';
-import useInitialState from '../hooks/useInititalState';
 
 const ConsoleLog = ({ children }) => {
   console.log(children);
   return false;
 };
 
-const API = 'http://localhost:3000/initialState';
-
-const App = () => {
-  const initialState = useInitialState(API);
+const Home = ({ mylist, trends, originals }) => {
 
   return (
     <div className='App'>
-      <Header />
-      <Search />
+      <Search isHome />
       {
-        initialState.mylist.length > 0 && (
+        mylist.length > 0 && (
           <Categories title='Mi Lista'>
             <Carousel>
-              <CarouselItem />
+              {mylist.map((item) => (
+                <CarouselItem
+                  key={item.id}
+                  {...item}
+                  isList
+                />
+              ))}
             </Carousel>
           </Categories>
         )
@@ -36,7 +36,7 @@ const App = () => {
       <Categories title='Tendencias'>
         <Carousel>
           {
-            initialState.trends.map((item) => <CarouselItem key={item.id} {...item} />)
+            trends.map((item) => <CarouselItem key={item.id} {...item} />)
           }
         </Carousel>
       </Categories>
@@ -44,12 +44,11 @@ const App = () => {
       <Categories title='Originales de Platzi Video'>
         <Carousel>
           {
-            initialState.originals.map((item) => <CarouselItem key={item.id} {...item} />)
+            originals.map((item) => <CarouselItem key={item.id} {...item} />)
           }
           <CarouselItem />
         </Carousel>
       </Categories>
-      <Footer />
     </div>
   );
 };
@@ -62,4 +61,13 @@ CarouselItem.propTypes = {
   duration: PropTypes.number,
 };
 
-export default App;
+const mapStateToProps = (state) => {
+
+  return {
+    mylist: state.mylist,
+    trends: state.trends,
+    originals: state.originals,
+  };
+};
+
+export default connect(mapStateToProps, null)(Home);
