@@ -7,7 +7,7 @@ import '../assets/styles/components/Player.scss';
 const Player = (props) => {
   const { id } = props.match.params;
   const hasPlaying = Object.keys(props.playing).length > 0;
-
+  console.log(id);
   useEffect(() => {
     props.getVideoSource(id);
   }, []);
@@ -20,11 +20,13 @@ const Player = (props) => {
 
       <div className='Player-back'>
         <button type='button' onClick={() => props.history.goBack()}>
-                Regresar
+          Regresar
         </button>
       </div>
     </div>
-  ) : <Redirect to='/404' />;
+  ) : (
+    <Redirect to='/404' />
+  );
 };
 
 const MapStateToProps = (state) => {
