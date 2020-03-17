@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -6,11 +7,6 @@ import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
 import '../assets/styles/App.scss';
-
-const ConsoleLog = ({ children }) => {
-  console.log(children);
-  return false;
-};
 
 const Home = ({ mylist, trends, originals }) => {
 

@@ -35,7 +35,6 @@ const Login = (props) => {
             type='text'
             placeholder='Correo'
             onChange={handleInput}
-
           />
           <input
             name='password'
@@ -44,9 +43,11 @@ const Login = (props) => {
             placeholder='Contraseña'
             onChange={handleInput}
           />
-          <button className='button' type='submit'>Iniciar sesión</button>
+          <button className='button' type='submit'>
+            Iniciar sesión
+          </button>
           <div className='login__container--remember-me'>
-            <label>
+            <label htmlFor='cbox1'>
               <input type='checkbox' id='cbox1' value='first_checkbox' />
               Recuérdame
             </label>
