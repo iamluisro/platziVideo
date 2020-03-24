@@ -1,16 +1,15 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import NotFound from './NotFound';
 import { getVideoSource } from '../actions';
 import '../assets/styles/components/Player.scss';
 
 const Player = (props) => {
   const { match, playing } = props;
-  const { id } = match.params;
+  const { _id: movieId } = match.params;
   const hasPlaying = Object.keys(playing).length > 0;
-  console.log(id);
   useEffect(() => {
-    props.getVideoSource(id);
+    props.getVideoSource(movieId);
   }, []);
 
   return hasPlaying ? (
@@ -26,7 +25,7 @@ const Player = (props) => {
       </div>
     </div>
   ) : (
-    <Redirect to='/404' />
+    <NotFound />
   );
 };
 

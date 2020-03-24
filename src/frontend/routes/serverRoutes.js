@@ -4,31 +4,34 @@ import Register from '../containers/Register';
 import Player from '../containers/Player';
 import NotFound from '../containers/NotFound';
 
-const routes = [
-  {
-    exact: true,
-    path: '/',
-    component: Home,
-  },
-  {
-    exact: true,
-    path: '/login',
-    component: Login,
-  },
-  {
-    exact: true,
-    path: '/register',
-    component: Register,
-  },
-  {
-    exact: true,
-    path: '/playerr/:id',
-    component: Player,
-  },
-  {
-    name: 'NotFound',
-    component: NotFound,
-  },
-];
+const serverRoutes = (isLogged) => {
+  return [
+    {
+      exact: true,
+      path: '/',
+      component: isLogged ? Home : Login,
+    },
+    {
+      exact: true,
+      path: '/login',
+      component: Login,
+    },
+    {
+      exact: true,
+      path: '/register',
+      component: Register,
+    },
+    {
+      exact: true,
+      path: '/player/:movieId',
+      component: isLogged ? Player : Login,
+    },
+    {
+      name: 'NotFound',
+      component: NotFound,
+    },
+  ];
 
-export default routes;
+};
+
+export default serverRoutes;

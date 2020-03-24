@@ -10,9 +10,9 @@ require('dotenv').config();
 const isDev = (process.env.ENV === 'development');
 const entry = ['./src/frontend/index.js'];
 
-if (isDev) {
+/* if (isDev) {
   entry.push('webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true');
-}
+} */
 
 module.exports = {
   entry,
@@ -41,7 +41,7 @@ module.exports = {
           enforce: true,
           test(module, chunks) {
             const name = module.nameForCondition && module.nameForCondition();
-            return chunks.some((chunk) => chunks.name !== 'vendors' && /[\\/]node_modules[\\/]/.test(name));
+            return chunks.some((chunk) => chunk.name !== 'vendors' && /[\\/]node_modules[\\/]/.test(name));
           },
         },
       },

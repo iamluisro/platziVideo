@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const setFavorite = (payload) => ({
   type: 'SET_FAVORITE',
   payload,
@@ -18,6 +20,11 @@ export const logoutRequest = (payload) => ({
   payload,
 });
 
+export const setError = (payload) => ({
+  type: 'SET_ERROR',
+  payload,
+});
+
 export const registerRequest = (payload) => ({
   type: 'REGISTER_REQUEST',
   payload,
@@ -28,3 +35,99 @@ export const getVideoSource = (payload) => ({
   payload,
 });
 
+export const setUserMovie = (payload) => {
+  const { _id, id, cover, title, year, contentRating, duration, isList } = payload;
+  return (dispatch) => {
+    axios({
+      url: '/user-movies',
+      method: 'post',
+      data: { _id },
+    })
+      .then(() => {
+        dispatch(setFavorite({ _id, id, cover, title, year, contentRating, duration, isList }));
+      })
+      .then((err) => dispatch(setError(err)));
+  };
+};
+
+export const deleteUserMovie = (_id) => {
+  const movieId = _id;
+  return (dispatch) => {
+    axios({
+      url: `/user-movies/${movieId}`,
+      method: 'delete',
+    })
+      .then(() => {
+        dispatch(deleteFavorite(movieId));
+      })
+      .then((err) => dispatch(setError(err)));
+    console.log(movieId);
+  };
+
+};
+
+/* return (dispatch) => {
+  axios({
+    url: `/user-movies/${movieId}`,
+    method: 'delete',
+  })
+    .then((err) => dispatch(setError(err)));
+  console.log(payload);
+}; */
+
+/* if (payloadMovieId === state.setUserMovie.movieId) {
+  const userMovieId = state.setUserMovie._id;
+  console.log(userMovieId);
+  axios({
+    url: `/user-movies/${userMovieId}`,
+    method: 'delete',
+    data: { userMovieId },
+  })
+    .then(() => {
+      dispatch(deleteFavorite(payloadMovieId));
+    })
+    .then((err) => dispatch(setError(err)));
+}; */
+
+/*   return (dispatch) => {
+    axios({
+      url: `/user-movies/${userMovieId}`,
+      method: 'delete',
+      data: { userMovieId },
+    })
+      .then(() => {
+        dispatch(deleteFavorite(data));
+      })
+      .then((err) => dispatch(setError(err)));
+  };
+}; */
+
+export const registerUser = (payload) => {
+  return (dispatch) => {
+    axios.post('/auth/sign-up', payload)
+      .then(({ data }) => dispatch(registerRequest(data)))
+      .then(() => { window.location.href = '/'; })
+      .catch((err) => dispatch(setError(err)));
+  };
+};
+
+export const loginUser = ({ email, password }) => {
+  return (dispatch) => {
+    axios({
+      url: '/auth/sign-in',
+      method: 'post',
+      auth: {
+        username: email,
+        password,
+      },
+    })
+      .then(({ data }) => {
+        document.cookie = `email=${data.email}`;
+        document.cookie = `name=${data.name}`;
+        document.cookie = `id=${data.id}`;
+        dispatch(loginRequest(data));
+      })
+      .then(() => { window.location.href = '/'; })
+      .catch((err) => dispatch(setError(err)));
+  };
+};
