@@ -10,6 +10,7 @@ require('dotenv').config();
 const isDev = (process.env.ENV === 'development');
 const entry = ['./src/frontend/index.js'];
 
+//disabled webpack-hot-middleware because I believe it was causing the app too much stress
 /* if (isDev) {
   entry.push('webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true');
 } */

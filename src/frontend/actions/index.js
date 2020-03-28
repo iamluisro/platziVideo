@@ -66,42 +66,6 @@ export const deleteUserMovie = (_id) => {
 
 };
 
-/* return (dispatch) => {
-  axios({
-    url: `/user-movies/${movieId}`,
-    method: 'delete',
-  })
-    .then((err) => dispatch(setError(err)));
-  console.log(payload);
-}; */
-
-/* if (payloadMovieId === state.setUserMovie.movieId) {
-  const userMovieId = state.setUserMovie._id;
-  console.log(userMovieId);
-  axios({
-    url: `/user-movies/${userMovieId}`,
-    method: 'delete',
-    data: { userMovieId },
-  })
-    .then(() => {
-      dispatch(deleteFavorite(payloadMovieId));
-    })
-    .then((err) => dispatch(setError(err)));
-}; */
-
-/*   return (dispatch) => {
-    axios({
-      url: `/user-movies/${userMovieId}`,
-      method: 'delete',
-      data: { userMovieId },
-    })
-      .then(() => {
-        dispatch(deleteFavorite(data));
-      })
-      .then((err) => dispatch(setError(err)));
-  };
-}; */
-
 export const registerUser = (payload) => {
   return (dispatch) => {
     axios.post('/auth/sign-up', payload)
