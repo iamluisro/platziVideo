@@ -71,6 +71,7 @@ app.post('/auth/sign-in', async (req, res, next) => {
         res.cookie('token', token, {
           httpOnly: !(env === 'development'),
           secure: !(env === 'development'),
+          domain: 'https://platzivideoapptest.herokuapp.com/',
         });
 
         res.status(200).json(user.user);
