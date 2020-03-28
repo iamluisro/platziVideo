@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { loginRequest } from '../actions';
+import { loginUser } from '../actions';
 import googleIcon from '../assets/static/google-icon.png';
 import twitterIcon from '../assets/static/twitter-icon.png';
 import '../assets/styles/components/Login.scss';
@@ -20,7 +20,7 @@ const Login = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.loginRequest(form);
+    props.loginUser(form);
     props.history.push('/');
     console.log(form);
   };
@@ -47,7 +47,7 @@ const Login = (props) => {
             Iniciar sesión
           </button>
           <div className='login__container--remember-me'>
-            <label>
+            <label htmlFor='cbox1'>
               <input type='checkbox' id='cbox1' value='first_checkbox' />
               Recuérdame
             </label>
@@ -57,15 +57,19 @@ const Login = (props) => {
         <section className='login__container--social-media'>
           <div>
             <img src={googleIcon} alt='googleIcon' />
+            {' '}
             Inicia sesión con Google
+            {' '}
           </div>
           <div>
             <img src={twitterIcon} alt='twitterIcon' />
+            {' '}
             Inicia sesión con Twitter
           </div>
         </section>
         <p className='login__container--register'>
           No tienes ninguna cuenta
+          {' '}
           <Link to='/register'>Regístrate</Link>
         </p>
       </section>
@@ -74,7 +78,7 @@ const Login = (props) => {
 };
 
 const mapDispatchToProps = {
-  loginRequest,
+  loginUser,
 };
 
 export default connect(null, mapDispatchToProps)(Login);
