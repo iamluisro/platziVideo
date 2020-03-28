@@ -30,6 +30,7 @@
 		"md5": "^2.2.1",
 		"minimist": "^1.2.5",
 		"mkdirp": "^0.5.3",
+		"@babel/core": "^7.8.7",
 		"nodemon": "^2.0.2",
 		"npm-force-resolutions": "0.0.2",
 		"passport": "^0.4.1",
@@ -49,7 +50,6 @@
 		"webpack-manifest-plugin": "^2.2.0"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.8.7",
 		"@babel/preset-env": "^7.8.7",
 		"@babel/preset-react": "^7.8.3",
 		"babel-eslint": "^10.1.0",
