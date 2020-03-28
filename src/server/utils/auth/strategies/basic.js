@@ -28,7 +28,6 @@ passport.use(
         return cb(boom.unauthorized(), false);
       }
 
-      console.log(data);
       return cb(null, data);
     } catch (error) {
       return cb(error);

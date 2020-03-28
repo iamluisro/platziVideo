@@ -69,11 +69,12 @@ app.post('/auth/sign-in', async (req, res, next) => {
 
         const { token, ...user } = data;
         res.cookie('token', token, {
-          httpOnly: !(env === 'development'),
-          secure: !(env === 'development'),
-          domain: 'https://shielded-caverns-26539.herokuapp.com/',
+          //These settings need to be enabled for secure use of cookies
+          //httpOnly: !(env === 'development'),
+          //secure: !(env === 'development'),
+          //domain: 'herokuapp.com',
         });
-
+        console.log(data);
         res.status(200).json(user.user);
       });
     } catch (error) {
@@ -269,4 +270,3 @@ app.listen(port, (err) => {
   if (err) console.log(err);
   else console.log(`Server running on  port:${port}`);
 });
-
