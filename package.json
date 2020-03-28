@@ -7,7 +7,8 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "webpack-cli --config webpack.config.js",
 		"start:dev": "NODE_ENV=development nodemon src/server/index.js --exact babel-node ",
-		"lint": "eslint src/frontend/ --ext .js --ext .jsx --fix"
+		"lint": "eslint src/frontend/ --ext .js --ext .jsx --fix",
+		"start": "node src/server"
 	},
 	"keywords": [],
 	"author": "",
