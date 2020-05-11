@@ -12,16 +12,19 @@ The two main parts were:
 
 For testing:
 
+```
 Admin User
 email: root@undefined.sh
 password: root 
 Non-Admin User
 email: maria@undefined.sh
 password: secret
+```
 
 1. Frontend
 Frontend Struture
-.
+```
+| ├   |── components                 # Folder holding app components.
 ├── dist                   # Compiled files 
 ├── src                     # Source files, holding frontend and ssr
 | ├── frontend                 # Folder holding assets (imgs and styles)
@@ -42,6 +45,7 @@ Frontend Struture
 ├── .babelrc                 # Babel Configuration
 ├── .eslintrc                # Used for Cleaning up code.
 └── README.md
+```
 
 Frontend
 The frontend piece was created using React.js as the framework and redux (including redux thunk for state management). There is one main file, index.js holding the app store and routes. The App routes are redenred using 'react-router-dom. All components are wrapped here using a "Layout" component rendering the header and footer components. 
@@ -70,6 +74,7 @@ Frontend deployed through Heroku. The main missing piece is a HTTPS connection, 
 
 2. Backend
 Backend Struture
+```
 .
 ├── movies_api               # Root dir
 | ├── congif                # Folder with Config file for ENV variables to be used. 
@@ -82,6 +87,7 @@ Backend Struture
 | ├── services            # Folder where our Database services were created. 
 | ├── strategies          # Folder for creating our basic and jwt strategies for access the DB. 
 | ├── index.js                 # Main file of the backend service. 
+```
 
 Deployment
 API deployed through Heroku.
