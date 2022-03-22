@@ -31,7 +31,7 @@
 		"history": "^4.10.1",
 		"ignore-styles": "^5.0.1",
 		"md5": "^2.2.1",
-		"minimist": "^1.2.5",
+		"minimist": "^1.2.6",
 		"mkdirp": "^0.5.3",
 		"nodemon": "^2.0.2",
 		"npm-force-resolutions": "0.0.2",
