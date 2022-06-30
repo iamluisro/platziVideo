@@ -35,7 +35,7 @@
 		"mkdirp": "^0.5.3",
 		"nodemon": "^2.0.2",
 		"npm-force-resolutions": "0.0.2",
-		"passport": "^0.4.1",
+		"passport": "^0.6.0",
 		"passport-http": "^0.3.0",
 		"prop-types": "^15.7.2",
 		"react": "^16.13.0",
