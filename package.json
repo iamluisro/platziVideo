@@ -16,7 +16,7 @@
 	"dependencies": {
 		"@babel/register": "^7.8.6",
 		"@babel/core": "^7.8.7",
-		"@babel/preset-env": "^7.8.7",
+		"@babel/preset-env": "^7.22.6",
 		"@babel/preset-react": "^7.8.3",
 		"@hapi/boom": "^9.1.0",
 		"asset-require-hook": "^1.2.0",
