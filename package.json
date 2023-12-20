@@ -32,7 +32,7 @@
 		"ignore-styles": "^5.0.1",
 		"md5": "^2.2.1",
 		"minimist": "^1.2.5",
-		"mkdirp": "^0.5.3",
+		"mkdirp": "^0.5.5",
 		"nodemon": "^2.0.2",
 		"npm-force-resolutions": "0.0.2",
 		"passport": "^0.4.1",
@@ -47,7 +47,7 @@
 		"redux": "^4.0.5",
 		"redux-thunk": "^2.3.0",
 		"regenerator-runtime": "^0.13.5",
-		"webpack": "^4.42.0",
+		"webpack": "^5.0.0",
 		"webpack-dev-middleware": "^3.7.2",
 		"webpack-hot-middleware": "^2.25.0",
 		"webpack-manifest-plugin": "^2.2.0"
