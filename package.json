@@ -20,7 +20,7 @@
 		"@babel/preset-react": "^7.8.3",
 		"@hapi/boom": "^9.1.0",
 		"asset-require-hook": "^1.2.0",
-		"axios": "^0.19.2",
+		"axios": "^1.6.3",
 		"cookie-parser": "^1.4.5",
 		"core-js": "^3.6.4",
 		"cors": "^2.8.5",
