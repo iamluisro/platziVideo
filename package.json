@@ -33,7 +33,7 @@
 		"md5": "^2.2.1",
 		"minimist": "^1.2.5",
 		"mkdirp": "^0.5.3",
-		"nodemon": "^2.0.2",
+		"nodemon": "^2.0.3",
 		"npm-force-resolutions": "0.0.2",
 		"passport": "^0.4.1",
 		"passport-http": "^0.3.0",
